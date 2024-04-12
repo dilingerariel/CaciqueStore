@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indumentaria local</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/be/Colo-Colo.svg/1200px-Colo-Colo.svg.png" width="70" height="80" class="d-inline-block align-top" alt="Logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/328-3287452_copa-libertadores-primer-trofeo-hd-png-download.png" width="30" height="70 ">
+                CACIQUE STORE
+            </a>
+            <div class="navbar-nav ms-auto">
+                <form class="d-flex me-auto" role="search">
+                    <input class="form-control me-2" type="search" placeholder="VAMOS EL ALBO" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
+                <!-- Icono de carrito de compras con evento onclick -->
+                <a href="#" class="nav-link" onclick="mostrarCarritoModal()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="carritoCount" class="badge bg-danger"></span> <!-- Contador del carrito -->
+                </a>
+                <!-- Fin del icono de carrito de compras -->
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="caciquestore.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Camisetas
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="local.html">Local</a></li>
+                            <li><a class="dropdown-item" href="visitante.html">Visitante</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="alternativo.html">Alternativa</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="product-container">
+        <div class="product">
+            <img class="local" src="https://www.albomania.cl/wp-content/uploads/2024/01/20241.jpeg">
+            <h2>Polera Local</h2>
+            <p>Precio: $59.990</p>
+            <form>
+                <label for="size">Talla:</label>
+                <select id="size" name="size">
+                    <option value="s">S</option>
+                    <option value="m">M</option>
+                    <option value="l">L</option>
+                    <option value="xl">XL</option>
+                </select>
+                <!-- Aquí agregamos el evento onclick para llamar a la función agregarAlCarrito -->
+                <button type="button" class="btn btn-primary btn-comprar" onclick="agregarAlCarrito('Polera Local', 59990)">Comprar</button>
+            </form>
+        </div>
+
+        <div class="product">
+            <img class="local" src="https://i0.wp.com/cotesport.cl/wp-content/uploads/2022/05/34edcbb4686746e1be65ae9300fb8e49_9366.webp?fit=840%2C840&ssl=1">
+            <h2>Short Local</h2>
+            <p>Precio: $29.990</p>
+            <form>
+                <label for="size">Talla:</label>
+                <select id="size" name="size">
+                    <option value="s">S</option>
+                    <option value="m">M</option>
+                    <option value="l">L</option>
+                    <option value="xl">XL</option>
+                </select>
+                <!-- Aquí agregamos el evento onclick para llamar a la función agregarAlCarrito -->
+                <button type="button" class="btn btn-primary btn-comprar" onclick="agregarAlCarrito('Short Local', 29990)">Comprar</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Carrito de Compras</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="carrito"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Aquí agregamos el script con la función agregarAlCarrito -->
+    <script>
+        let carrito = [];
+        
+        function agregarAlCarrito(producto, precio) {
+            // Obtenemos la talla seleccionada
+            let talla = document.getElementById('size').value;
+            // Creamos el producto con la talla seleccionada
+            let productoConTalla = producto + ' - Talla: ' + talla;
+            carrito.push({ producto: productoConTalla, precio });
+            mostrarCarrito();
+            actualizarCarritoCount();
+            animateCart();
+        }
+
+        function mostrarCarritoModal() {
+            // Mostrar el modal del carrito
+            $('#cartModal').modal('show');
+        }
+
+        function mostrarCarrito() {
+            let carritoContainer = document.getElementById('carrito');
+            carritoContainer.innerHTML = '';
+            carrito.forEach((item, index) => {
+                carritoContainer.innerHTML += `
+                    <div class="item">
+                        <p>${item.producto} - ${item.precio}</p>
+                        <button class="btn btn-danger btn-sm cart-remove-btn" onclick="eliminarDelCarrito(${index})">
+                            <i class="fas fa-trash"></i> <!-- Icono de eliminar -->
+                        </button>
+                    </div>
+                `;
+            });
+        }
+
+        function actualizarCarritoCount() {
+            document.getElementById('carritoCount').innerText = carrito.length;
+        }
+
+        function eliminarDelCarrito(index) {
+            carrito.splice(index, 1);
+            mostrarCarrito();
+            actualizarCarritoCount();
+        }
+
+        function animateCart() {
+            let cartIcon = document.querySelector('.fas.fa-shopping-cart');
+            cartIcon.classList.add('animated-cart');
+            setTimeout(() => {
+                cartIcon.classList.remove('animated-cart');
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
+

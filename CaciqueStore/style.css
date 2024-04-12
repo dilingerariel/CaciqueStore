@@ -1,0 +1,524 @@
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: #080202; /* Cambiar a tu color preferido */
+}
+
+/* Alinear el contenido del navbar horizontalmente */
+.navbar {
+    display: flex;
+    justify-content: center;
+}
+
+/* Alinear el logo verticalmente */
+.navbar-brand img {
+    margin-right: -20px;
+    vertical-align: middle;
+}
+
+
+/* Estilo para el botón de búsqueda */
+.form-control {
+    border-radius: 10%;
+}
+
+/* Estilo para el botón de búsqueda */
+.btn-outline-success {
+    border-radius: 20%;
+}
+
+/* Alinear verticalmente el contenido del navbar */
+.navbar-nav {
+    align-items: center;
+}
+
+/* Estilo para la animación de añadir al carrito */
+@keyframes add-to-cart {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Estilo para la animación de eliminar del carrito */
+@keyframes remove-from-cart {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.8);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Estilo para el contador de productos en el carrito */
+#carritoCount {
+    position: absolute;
+    top: 2px;
+    right: 7px;
+    font-size: 12px;
+    background-color: #dc3545;
+    color: #fff;
+    border-radius: 50%;
+    padding: 2px 5px;
+}
+
+/* Estilo para el icono de carrito de compras */
+.navbar .nav-link .fas.fa-shopping-cart {
+    position: relative;
+}
+
+/* Estilo para la animación del icono de carrito de compras */
+@keyframes animated-cart {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Aplicar la animación al icono de carrito de compras */
+.animated-cart {
+    animation: animated-cart 0.5s ease;
+}
+
+/* Estilo para el modal del carrito de compras */
+.modal-body {
+    max-height: 400px; /* Ajusta la altura máxima del modal */
+    overflow-y: auto; /* Habilita el desplazamiento vertical */
+}
+
+/* Estilo para el botón de eliminar del carrito */
+.cart-remove-btn {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Cambio de color al pasar el mouse sobre el botón de eliminar */
+.cart-remove-btn:hover {
+    background-color: #c82333;
+    animation: remove-from-cart 0.5s ease; /* Animación de eliminar del carrito */
+}
+
+/* Estilo para los botones de control del carrusel */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%; /* Ancho de los botones de control */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Color de fondo de los íconos de control */
+}
+
+/* Estilos para el botón de Comprar en el carrusel */
+.carousel-caption .btn-comprar {
+    background-color: #f3f3f3; /* Color de fondo */
+    color: #050505; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 8px 16px; /* Espaciado interno */
+    font-size: 20px; /* Tamaño de fuente */
+}
+
+.carousel-caption .btn-comprar:hover {
+    background-color: #70b614; /* Cambiar color de fondo al pasar el mouse */
+    color: #0e0202; /* Mantener color del texto al pasar el mouse */
+}
+
+/* Estilo para el botón de Cerrar del modal del carrito */
+.modal-footer .btn-secondary {
+    border-radius: 5px;
+    padding: 10px 20px;
+    background-color: #6c757d; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    border: none; /* Sin borde */
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+/* Cambio de color al pasar el mouse sobre el botón de Cerrar */
+.modal-footer .btn-secondary:hover {
+    background-color: #5a6268; /* Cambia el color de fondo al pasar el mouse */
+}
+
+
+/* Estilos para el logo en el formulario de inicio de sesión */
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-logo {
+    width: 150px;
+}
+
+/* Estilos para el formulario de inicio de sesión */
+.login-form {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos personalizados para el formulario de inicio de sesión */
+
+/* Estilos personalizados para el formulario de inicio de sesión */
+
+.container {
+    margin-top: 50px;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    padding: 40px;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.form-control {
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 20px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Cambia el color de fondo al pasar el mouse */
+}
+
+.alert {
+    border-radius: 5px;
+    margin-top: 20px;
+    display: none;
+}
+
+/* Estilos personalizados para el logo */
+.card img {
+    margin-bottom: 20px;
+    width: 100px;
+    height: auto;
+}
+
+/* Alinear los cuadros de texto al centro */
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.form-label {
+    font-weight: bold;
+}
+
+.form-control {
+    border-radius: 5px;
+}
+
+.btn-primary {
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 20px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Cambia el color de fondo al pasar el mouse */
+}
+
+.alert {
+    border-radius: 5px;
+    margin-top: 20px;
+    display: none;
+}
+
+/* Estilos personalizados para el logo */
+.card img {
+    margin-bottom: 20px;
+    width: 100px;
+    height: auto;
+}
+
+
+.login-form input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 10px;
+}
+
+/* Estilos para el carousel */
+
+.carousel-item img {
+    height: 500px; /* Ajusta la altura de las imágenes del carousel según sea necesario */
+    object-fit: scale-down; /* Para que las imágenes del carousel se ajusten correctamente */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%; /* Ancho de los botones de control */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Color de fondo de los íconos de control */
+}
+
+.carousel-indicators {
+    bottom: 10px; /* Ajusta la posición de los indicadores del carousel */
+}
+
+.carousel-indicators button {
+    background-color: rgba(0, 0, 0, 0.5); /* Color de fondo de los botones de los indicadores */
+    border: none; /* Sin borde en los botones de los indicadores */
+    width: 10px; /* Ancho de los botones de los indicadores */
+    height: 10px; /* Alto de los botones de los indicadores */
+    margin: 0 5px; /* Espacio entre los botones de los indicadores */
+    border-radius: 50%; /* Forma de los botones de los indicadores */
+    cursor: pointer; /* Cursor al pasar sobre los botones de los indicadores */
+    transition: background-color 0.20s ease; /* Transición suave para el cambio de color de fondo */
+}
+
+.carousel-indicators button.active {
+    background-color: #0a0707; /* Color de fondo del botón activo del indicador */
+}
+
+
+/* Estilos para el botón de Comprar en el carrusel */
+.carousel-caption .btn-comprar {
+    background-color: #f3f3f3; /* Color de fondo */
+    color: #050505; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 8px 16px; /* Espaciado interno */
+    font-size: 20px; /* Tamaño de fuente */
+}
+
+.carousel-caption .btn-comprar:hover {
+    background-color: #70b614; /* Cambiar color de fondo al pasar el mouse */
+    color: #0e0202; /* Mantener color del texto al pasar el mouse */
+}
+
+
+/* Estilos para el primer carrusel (poleras) */
+
+.carousel.slide1 .carousel-item img {
+    height: 400px; 
+    object-fit: scale-down;
+}
+
+.carousel.slide1 .carousel-control-prev,
+.carousel.slide1 .carousel-control-next {
+    width: 5%;  
+}
+
+.carousel.slide1 .carousel-control-prev-icon,
+.carousel.slide1 .carousel-control-next-icon {
+    background-color: rgba(8, 1, 1, 0.5); 
+    color: #000; 
+}
+
+.carousel.slide1 .carousel-indicators {
+    bottom: -20px; 
+}
+
+.carousel.slide1 .carousel-indicators button {
+    background-color: rgba(0, 0, 0, 0.5); /* Color de fondo de los botones de los indicadores del primer carrusel */
+    border: none; 
+    width: 10px; 
+    height: 10px; 
+    margin: 0 5px; 
+    border-radius: 50%; 
+    cursor: pointer; 
+    transition: background-color 0.20s ease; 
+}
+
+.carousel.slide1 .carousel-indicators button.active {
+    background-color: #000; /* Color de fondo del botón activo del indicador del primer carrusel */
+}
+
+
+/* Estilos para el segundo carrusel */
+
+.carousel.slide2 .carousel-item img {
+    height: 400px; /* Ajusta la altura de las imágenes del segundo carrusel según sea necesario */
+    object-fit: scale-down; /* Ajusta la forma en que se ajustan las imágenes dentro del contenedor */
+}
+
+.carousel.slide2 .carousel-control-prev,
+.carousel.slide2 .carousel-control-next {
+    width: 5%; /* Ancho de los botones de control del segundo carrusel */
+}
+
+.carousel.slide2 .carousel-control-prev-icon,
+.carousel.slide2 .carousel-control-next-icon {
+    background-color: rgba(8, 1, 1, 0.5); /* Color de fondo de los íconos de control del segundo carrusel */
+    color: #000; /* Color de los íconos de control del segundo carrusel */
+}
+
+.carousel.slide2 .carousel-indicators {
+    bottom: -20px; /* Ajusta la posición de los indicadores del segundo carrusel */
+}
+
+.carousel.slide2 .carousel-indicators button {
+    background-color: rgba(0, 0, 0, 0.5); 
+    border: none; 
+    width: 10px; 
+    height: 10px; 
+    margin: 0 5px; 
+    border-radius: 50%; 
+    cursor: pointer; 
+    transition: background-color 0.20s ease; 
+}
+
+.carousel.slide2 .carousel-indicators button.active {
+    background-color: #000; /* Color de fondo del botón activo del indicador del segundo carrusel */
+}
+
+body {
+    background-color: #f2f2f2; /* Color de fondo gris */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+form {
+    margin-top: 50px;
+}
+
+input[type="text"],
+input[type="password"] {
+    padding: 10px;
+    margin: 10px;
+    width: 250px;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+#error-msg {
+    color: red;
+}
+
+.navbar {
+    background-color: #ffffff;
+    padding: 20px 0;
+}
+
+.navbar-brand img {
+    width: 70px;
+    height: auto;
+    margin-right: 15px;
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 20px;
+}
+
+.product {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    max-width: 300px;
+    margin: 10px;
+}
+
+.product img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.product form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product select {
+    margin-bottom: 10px;
+}
+
+/* Estilos para el botón de Iniciar Sesión */
+.btn-outline-light {
+    color: #070505; /* Color del texto */
+    border-color: #fff; /* Color del borde */
+}
+
+/* Cambio de color al pasar el mouse sobre el botón */
+.btn-outline-light:hover {
+    background-color: #0a0606; /* Cambia el fondo al color blanco */
+    color: #ffffff; /* Cambia el texto al color azul */
+    border-color: #007bff; /* Cambia el color del borde al azul */
+}
+
+/* Estilos para las imágenes en el carrito */
+#carrito .item img {
+    width: 230px; /* Establecer un ancho fijo para las imágenes */
+    height: 250px; /* Mantener la proporción original */
+    margin-right: 10px; /* Agregar un espacio entre la imagen y el texto */
+}
+
+/* Estilos para el contador del carrito */
+#carritoCount {
+    position: static; /* Posición absoluta para colocar el contador */
+    bottom: -10px; /* Ajustar la posición hacia abajo para que esté debajo del icono del carrito */
+    right: 0; /* Alinear a la derecha */
+    background-color: #dc3545; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    font-size: 12px; /* Tamaño de fuente */
+    width: 20px; /* Ancho */
+    height: 20px; /* Altura */
+    border-radius: 50%; /* Borde redondeado */
+    display: flex; /* Mostrar como flex para centrar */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    z-index: 9; /* Asegurar que esté encima del icono del carrito */
+}
